@@ -1,4 +1,5 @@
-import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
+import { DOMParser } from "jsr:@b-fuze/deno-dom";
+import * as path from "jsr:@std/path";
 
 // First, you need to manually show your following or followers on the Duolingo website.
 // Then, manually download the HTML file to your desktop and name it `input.html`.
@@ -6,14 +7,25 @@ import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 
 async function extractAndSaveH3Values() {
   try {
-    const htmlContent = await Deno.readTextFile(
-      `${Deno.env.get("HOME")}/Desktop/input.html`,
-    );
+    const desktopPath = Deno.env.get("HOME") + "/Desktop"; // Construct Desktop path
+    const inputFilename = Deno.args[0];
+    const outputFilename = Deno.args[1];
+
+    if (!inputFilename || !outputFilename) {
+      throw new Error(
+        "Please provide both input and output filenames as arguments.",
+      );
+    }
+
+    const inputPath = path.join(desktopPath, inputFilename); // Combine Desktop path with filename
+    const outputPath = path.join(desktopPath, outputFilename);
+
+    const htmlContent = await Deno.readTextFile(inputPath);
 
     // Parse HTML
     const doc = new DOMParser().parseFromString(htmlContent, "text/html");
     if (!doc) {
-      throw new Error("Failed to parse HTML document");
+      throw new Error(`Failed to parse HTML document from ${inputPath}`);
     }
 
     // Select all h3 elements with the specified classes
@@ -30,11 +42,7 @@ async function extractAndSaveH3Values() {
     // Join with newlines
     const outputContent = uniqueSortedValues.join("\n");
 
-    // Write to output file
-    await Deno.writeTextFile(
-      `${Deno.env.get("HOME")}/Desktop/users.txt`,
-      outputContent,
-    );
+    await Deno.writeTextFile(outputPath, outputContent);
 
     console.log(
       `Successfully processed ${uniqueSortedValues.length} unique values`,
