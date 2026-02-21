@@ -1,4 +1,1 @@
-# How to run a Deno file
-```shell
-deno run --allow-env --allow-net --allow-read --allow-write main.ts
-```
+[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
