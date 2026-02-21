@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "gts": "latest",
+    "typescript": "latest",
+    "@types/node": "latest"
+  }
+}

@@ -1,9 +1,11 @@
 function printJsonRootType(json: string) {
-  let parsed = JSON.parse(json);
-  console.log(parsed == null ? 'null' : Array.isArray(parsed) ? 'array' : typeof parsed);
+  const parsed = JSON.parse(json);
+  console.log(
+    parsed === null ? 'null' : Array.isArray(parsed) ? 'array' : typeof parsed,
+  );
 }
 
-printJsonRootType('{ "name": "Jane", "age": 18 }') // object
+printJsonRootType('{ "name": "Jane", "age": 18 }'); // object
 
 printJsonRootType('["a", "b"]'); // array
 
