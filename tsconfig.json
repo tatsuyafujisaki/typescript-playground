@@ -1,9 +1,19 @@
 {
-  "extends": "gts/tsconfig-google.json",
   "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext", "DOM"],
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
     "rootDir": "src",
     "outDir": "build",
-    "target": "ESNext"
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts"
