@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "latest",
+    "playwright": "latest",
     "typescript": "latest"
   },
   "private": true
