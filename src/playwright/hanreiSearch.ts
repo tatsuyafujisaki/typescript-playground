@@ -17,7 +17,7 @@ async function selectDate(page: Page, era: string, year: string, month: string, 
 async function main() {
   const [era, year, month, day] = process.argv.slice(2);
 
-  if (!day) {
+  if (!era || !year || !month || !day) {
     console.error('Usage: node --experimental-strip-types src/playwright/hanreiSearch.ts <元号> <年> <月> <日>');
     process.exit(1);
   }

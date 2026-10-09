@@ -4,5 +4,6 @@
     "playwright": "latest",
     "typescript": "latest"
   },
-  "private": true
+  "private": true,
+  "type": "module"
 }

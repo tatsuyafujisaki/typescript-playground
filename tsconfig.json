@@ -1,21 +1,23 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "module": "nodenext",
+    "types": [
+      "node"
+    ],
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["ESNext", "DOM"],
-    "module": "commonjs",
-    "noEmitOnError": true,
+    "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "rootDir": "src",
-    "outDir": "build",
-    "sourceMap": true,
-    "strict": true,
-    "target": "ESNext",
-    "types": ["node"]
-  },
-  "include": [
-    "src/**/*.ts"
-  ]
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
 }

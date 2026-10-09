@@ -7,7 +7,10 @@ interface MyNewableInteface {
 }
 
 class MyClass implements MyInterface {
-  constructor(public s: string) {
+  s: string;
+
+  constructor(s: string) {
+    this.s = s;
     console.log(s);
   }
 }
