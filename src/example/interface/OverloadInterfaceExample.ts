@@ -1,9 +1,9 @@
-interface MyOverloadInteface {
+interface MyOverloadInterface {
   (input: number): string;
   (input: string): string;
 }
 
-const moi: MyOverloadInteface = input => {
+const moi: MyOverloadInterface = input => {
   return typeof input === 'string' ? input : input.toString();
 };
 

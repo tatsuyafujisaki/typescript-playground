@@ -1,7 +1,7 @@
-interface MyCallableInteface2 {
+interface MyCallableInterface {
   (): string;
 }
 
-const mci: MyCallableInteface2 = () => 'Hello';
+const mci: MyCallableInterface = () => 'Hello';
 
 console.log(mci());
