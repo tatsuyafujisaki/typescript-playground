@@ -26,7 +26,6 @@ async function main() {
   const page = await browser.newPage();
 
   await page.goto('https://www.courts.go.jp/hanrei/search2/');
-  await page.waitForLoadState('networkidle');
   await page.getByText('期日指定').nth(1).click();
   await selectDate(page, era, year, month, day);
   await page.getByRole('button', { name: '検索', exact: true }).click();
