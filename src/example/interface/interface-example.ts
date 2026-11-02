@@ -1,7 +1,7 @@
 interface MyInterface1 {
   x: number | string;
   readonly iAmReadOnly: number | string;
-  f1: () => void | string;
+  f1: () => void;
   f2: () => number | string;
 }
 
