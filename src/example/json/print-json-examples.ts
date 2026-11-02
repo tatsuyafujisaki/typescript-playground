@@ -14,7 +14,7 @@ printJsonRootType('3.14'); // number
 
 printJsonRootType('"abc"'); // string
 
-printJsonRootType('true'); // true
-printJsonRootType('false'); // false
+printJsonRootType('true'); // boolean
+printJsonRootType('false'); // boolean
 
 printJsonRootType('null'); // null
