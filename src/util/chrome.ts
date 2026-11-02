@@ -1,13 +1,15 @@
 function deleteAttributesFromChromeBookmarks() {
-  for (const e of document.getElementsByTagName('h3')) {
-    e.removeAttribute('add_date');
-    e.removeAttribute('last_modified');
-    e.removeAttribute('personal_toolbar_folder');
-  }
+  const attributes = [
+    'add_date',
+    'icon',
+    'last_modified',
+    'personal_toolbar_folder',
+  ];
 
-  for (const e of document.getElementsByTagName('a')) {
-    e.removeAttribute('add_date');
-    e.removeAttribute('icon');
+  for (const e of document.querySelectorAll('a, h3')) {
+    for (const attribute of attributes) {
+      e.removeAttribute(attribute);
+    }
   }
 }
 
