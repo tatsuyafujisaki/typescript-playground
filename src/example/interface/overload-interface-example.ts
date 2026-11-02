@@ -3,9 +3,8 @@ interface MyOverloadInterface {
   (input: string): string;
 }
 
-const moi: MyOverloadInterface = input => {
-  return typeof input === 'string' ? input : input.toString();
-};
+const moi: MyOverloadInterface = input =>
+  typeof input === 'string' ? input : input.toString();
 
 console.log(moi('Hello'));
 console.log(moi(42));
