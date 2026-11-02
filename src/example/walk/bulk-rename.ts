@@ -4,7 +4,7 @@ import * as path from 'path';
 const extension = '.jpg';
 const cwd = process.cwd();
 
-const files = fs.readdirSync(cwd, {withFileTypes: true});
+const files = fs.readdirSync(cwd, { withFileTypes: true });
 
 const entries = files
   .filter(
