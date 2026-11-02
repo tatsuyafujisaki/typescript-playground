@@ -6,11 +6,10 @@ const cwd = process.cwd();
 
 const files = fs.readdirSync(cwd, { withFileTypes: true });
 
-const entries = files
-  .filter(file => !file.isDirectory() && file.name.toLowerCase().endsWith(extension))
-  .map(file => path.join(cwd, file.name));
-
-const sortedEntries = entries.sort((a, b) => a.localeCompare(b));
+const sortedEntries = files
+  .filter(file => file.isFile() && file.name.toLowerCase().endsWith(extension))
+  .map(file => path.join(cwd, file.name))
+  .toSorted((a, b) => a.localeCompare(b));
 
 sortedEntries.forEach((filePath, index) => {
   fs.renameSync(
