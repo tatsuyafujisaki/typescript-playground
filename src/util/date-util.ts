@@ -8,8 +8,9 @@ export function japaneseDate(date: Date = new Date()): string {
 }
 
 export function yesterday(date: Date = new Date()): Date {
-  date.setDate(date.getDate() - 1);
-  return date;
+  const d = new Date(date);
+  d.setDate(d.getDate() - 1);
+  return d;
 }
 
 export function yyyymmdd(date: Date = new Date()): string {
