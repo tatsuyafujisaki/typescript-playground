@@ -7,4 +7,4 @@ function arrayExample() {
   console.log(zs); // [ A0, B1, C2 ]
 }
 
-console.log(arrayExample());
+arrayExample();
