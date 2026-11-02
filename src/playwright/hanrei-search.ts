@@ -1,10 +1,10 @@
 // Usage:
 //   npm install
 //   npx playwright install
-//   node --experimental-strip-types src/playwright/hanrei-search.ts <元号> <年> <月> <日>
+//   node src/playwright/hanrei-search.ts <元号> <年> <月> <日>
 //
 // For example:
-//   node --experimental-strip-types src/playwright/hanrei-search.ts 平成 23 12 19
+//   node src/playwright/hanrei-search.ts 平成 23 12 19
 
 import { chromium, type Page } from 'playwright';
 
@@ -18,7 +18,7 @@ async function main() {
   const [era, year, month, day] = process.argv.slice(2);
 
   if (!era || !year || !month || !day) {
-    console.error('Usage: node --experimental-strip-types src/playwright/hanrei-search.ts <元号> <年> <月> <日>');
+    console.error('Usage: node src/playwright/hanrei-search.ts <元号> <年> <月> <日>');
     process.exit(1);
   }
 
