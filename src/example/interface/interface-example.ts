@@ -8,12 +8,10 @@ interface MyInterface1 {
 const mi: MyInterface1 = {
   x: 42,
   iAmReadOnly: 'a',
-  f1: function () {
+  f1: () => {
     console.log('Hello');
   },
-  f2: function () {
-    return 'Hello';
-  },
+  f2: () => 'Hello',
 };
 
 mi.x = 43;
