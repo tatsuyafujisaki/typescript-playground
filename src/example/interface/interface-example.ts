@@ -1,17 +1,19 @@
 interface MyInterface1 {
   x: number | string;
   readonly iAmReadOnly: number | string;
-  f1: () => void;
-  f2: () => number | string;
+  f1(): void;
+  f2(): number | string;
 }
 
 const mi: MyInterface1 = {
   x: 42,
   iAmReadOnly: 'a',
-  f1: () => {
+  f1() {
     console.log('Hello');
   },
-  f2: () => 'Hello',
+  f2() {
+    return 'Hello';
+  },
 };
 
 mi.x = 43;

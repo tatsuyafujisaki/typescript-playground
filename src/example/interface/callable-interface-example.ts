@@ -1,7 +1,5 @@
-interface MyCallableInterface {
-  (): string;
-}
+type MyCallable = () => string;
 
-const mci: MyCallableInterface = () => 'Hello';
+const mc: MyCallable = () => 'Hello';
 
-console.log(mci());
+console.log(mc());

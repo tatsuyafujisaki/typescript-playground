@@ -1,20 +1,12 @@
-interface MyIndexInterface1 {
-  [_: string]: number;
-}
-
-interface MyIndexInterface2 {
-  [_: number]: string;
-}
-
-const mii1: MyIndexInterface1 = {
+const mii1: Record<string, number> = {
   myKey: 42,
 };
 
-const mii2: MyIndexInterface2 = {
+const mii2: Record<number, string> = {
   42: 'myKey',
 };
 
-const mii2b: MyIndexInterface2 = ['a', 'b', 'c'];
+const mii2b: Record<number, string> = ['a', 'b', 'c'];
 
 console.log(mii1);
 console.log(mii2);

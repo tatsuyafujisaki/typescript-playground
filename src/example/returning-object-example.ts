@@ -1,11 +1,3 @@
-// Old-school way of returning an object.
-let f1 = (x: number) => {
-  return { x };
-};
+const f = (x: number) => ({ x });
 
-// Simple way of returning an object.
-const f2 = (x: number) => ({ x });
-
-f1 = f2;
-
-console.log(f1);
+console.log(f(42));

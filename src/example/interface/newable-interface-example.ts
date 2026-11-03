@@ -2,9 +2,7 @@ interface MyInterface {
   s: string;
 }
 
-interface MyNewableInterface {
-  new (s: string): MyInterface;
-}
+type MyNewable = new (s: string) => MyInterface;
 
 class MyClass implements MyInterface {
   s: string;
@@ -15,6 +13,6 @@ class MyClass implements MyInterface {
   }
 }
 
-const mni: MyNewableInterface = MyClass;
+const mn: MyNewable = MyClass;
 
-console.log(mni.name);
+console.log(mn.name);
