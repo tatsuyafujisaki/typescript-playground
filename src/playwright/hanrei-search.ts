@@ -14,22 +14,18 @@ async function selectDate(page: Page, era: string, year: string, month: string, 
   }
 }
 
-async function main() {
-  const [era, year, month, day] = process.argv.slice(2);
+const [era, year, month, day] = process.argv.slice(2);
 
-  if (!era || !year || !month || !day) {
-    console.error('Usage: node src/playwright/hanrei-search.ts <元号> <年> <月> <日>');
-    process.exit(1);
-  }
-
-  const browser = await chromium.launch({ headless: false });
-  const page = await browser.newPage();
-
-  await page.goto('https://www.courts.go.jp/hanrei/search2/');
-  await page.getByText('期日指定').nth(1).click();
-  await selectDate(page, era, year, month, day);
-  await page.getByRole('button', { name: '検索', exact: true }).click();
-  await page.pause();
+if (!era || !year || !month || !day) {
+  console.error('Usage: node src/playwright/hanrei-search.ts <元号> <年> <月> <日>');
+  process.exit(1);
 }
 
-main().catch(console.error);
+await using browser = await chromium.launch({ headless: false });
+const page = await browser.newPage();
+
+await page.goto('https://www.courts.go.jp/hanrei/search2/');
+await page.getByText('期日指定').nth(1).click();
+await selectDate(page, era, year, month, day);
+await page.getByRole('button', { name: '検索', exact: true }).click();
+await page.pause();
