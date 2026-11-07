@@ -6,13 +6,14 @@
 // For example:
 //   node src/playwright/hanrei-search.ts 平成 23 12 19
 
+import { argv, exit } from 'node:process';
 import { chromium } from 'playwright';
 
-const [era, year, month, day] = process.argv.slice(2);
+const [era, year, month, day] = argv.slice(2);
 
 if (!era || !year || !month || !day) {
   console.error('Usage: node src/playwright/hanrei-search.ts <元号> <年> <月> <日>');
-  process.exit(1);
+  exit(1);
 }
 
 await using browser = await chromium.launch({ headless: false });
